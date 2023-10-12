@@ -1,0 +1,257 @@
+<html>
+  <head>
+        <link rel="stylesheet" href="https://js.arcgis.com/3.44/esri/css/esri.css">
+    <style>
+      html, body, #map {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      *, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+}
+
+form {
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+
+@media screen and (min-width: 480px) {
+
+  form {
+    max-width: 480px;
+  }
+
+}
+        
+    </style>
+    <script src="https://js.arcgis.com/3.44/"></script>
+    <script>
+      var map;
+
+      require(["esri/map", "dojo/domReady!"], function(Map) {
+        map = new Map("map", {
+          basemap: "topo-vector",  //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
+          center: [-122.45, 37.75], // longitude, latitude
+          zoom: 13
+        });
+      });
+    </script>
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+  </head>
+    <body>
+        <!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <form action="https://carync--scorecard.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+    
+    <input type=hidden name="orgid" value="00DDK000000JRTR">
+    <input type=hidden name="retURL" value="https://www.carync.gov/">
+    
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail"                                  -->
+    <!--  value="eendrulat@ghinternational.com">                                  -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+    
+    <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+    
+    <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+    
+    <label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+    
+    <label for="description">Description</label><textarea name="description"></textarea><br>
+    
+    <!-- <input type=hidden name="Catalog_Placeholder_c" maxlength="80" value="a1QDK000000bcU22AI"> -->
+
+    <!-- <label for="Catalog_Placeholder_c">Project</label><input  id="Catalog_Placeholder_c" maxlength="80" name="Catalog_Placeholder_c" size="40" type="text" value="a1QDK000000bcU22AI" /><br> -->
+
+    Incident Geolocation (Latitude):<input  id="0BC36000000HGYh" name="0BC36000000HGYh" size="20" type="text" /><br>
+    
+    Incident Geolocation (Longitude):<input  id="0BC36000000HGYi" name="0BC36000000HGYi" size="20" type="text" /><br>
+    
+    <label for="type">Type</label><select  id="type" name="type"><option value="">--None--</option><option value="Utilities System Maintenance">Utilities System Maintenance</option>
+    <option value="HR Administration">HR Administration</option>
+    <option value="Recruitment">Recruitment</option>
+    <option value="Safety">Safety</option>
+    </select><br>
+    
+    <label for="status">Status</label><select  id="status" name="status"><option value="">--None--</option><option value="New">New</option>
+    <option value="Work Created">Work Created</option>
+    <option value="Scheduled">Scheduled</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Ongoing">Ongoing</option>
+    <option value="On Hold">On Hold</option>
+    <option value="Escalated">Escalated</option>
+    <option value="Reopened">Reopened</option>
+    <option value="Denied">Denied</option>
+    <option value="Work Completed">Work Completed</option>
+    <option value="Closed">Closed</option>
+    <option value="Transferred to External Entity">Transferred to External Entity</option>
+    <option value="Duplicate">Duplicate</option>
+    <option value="Reoccurring">Reoccurring</option>
+    <option value="Completed">Completed</option>
+    <option value="Closed - Junk">Closed - Junk</option>
+    <option value="Closed - Hiper">Closed - Hiper</option>
+    <option value="Assigned To Contractor">Assigned To Contractor</option>
+    <option value="Closed on Call">Closed on Call</option>
+    <option value="Pending External Agent">Pending External Agent</option>
+    <option value="Waiting for Customer">Waiting for Customer</option>
+    <option value="Merged">Merged</option>
+    <option value="Response Received">Response Received</option>
+    </select><br>
+    
+    <label for="reason">Case Reason</label><select  id="reason" name="reason"><option value="">--None--</option><option value="Complaint">Complaint</option>
+    <option value="Request">Request</option>
+    <option value="Inquiry">Inquiry</option>
+    <option value="Project">Project</option>
+    </select><br>
+    
+    <label for="priority">Priority</label><select  id="priority" name="priority"><option value="">--None--</option><option value="High">High</option>
+    <option value="Medium">Medium</option>
+    <option value="Low">Low</option>
+    </select><br>
+    
+    Category:<select  id="00N4u000003pyjQ" name="00N4u000003pyjQ" title="Category"><option value="">--None--</option><option value="Building and Development">Building and Development</option>
+    <option value="Call-Back Entry">Call-Back Entry</option>
+    <option value="Code Enforcement">Code Enforcement</option>
+    <option value="Connect and Engage">Connect and Engage</option>
+    <option value="Garbage, Recycling and Yard Waste">Garbage, Recycling and Yard Waste</option>
+    <option value="Hot Topics">Hot Topics</option>
+    <option value="Information and Resources">Information and Resources</option>
+    <option value="Infrastructure and Facilities">Infrastructure and Facilities</option>
+    <option value="Public Safety and Emergency Management">Public Safety and Emergency Management</option>
+    <option value="Recreation and Enjoyment">Recreation and Enjoyment</option>
+    <option value="Spam/Junk Mail">Spam/Junk Mail</option>
+    <option value="Test Category">Test Category</option>
+    <option value="Traffic and Transportation">Traffic and Transportation</option>
+    <option value="Unclassified">Unclassified</option>
+    <option value="Utilities">Utilities</option>
+    <option value="Water, Sewer, and Stormwater">Water, Sewer, and Stormwater</option>
+    </select><br>
+    
+    <input type="hidden"  id="external" name="external" value="1" /><br>
+    
+    <input type="submit" name="submit">
+    
+    </form>
+        <!-- <div id="map"></div> -->
+
+    </body>
+</html> 
